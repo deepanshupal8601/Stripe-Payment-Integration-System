@@ -91,12 +91,12 @@ stripe-payment-integration-system/
 ## ⚡ Quick Start
 
 ### 1️⃣ Clone Repository
-
-git clone https://github.com/deepanshupal8601/Stripe-Payment-Integration-System.git
-cd stripe-payment-integration-system
+         git clone :
+              https://github.com/deepanshupal8601/Stripe-Payment-Integration-System.git
+              cd stripe-payment-integration-system
 ......................................................................................
 2️⃣ Configure Stripe API Keys
-  Update application.properties in all three services:
+              Update application.properties in all three services:
 
 -📁 stripe-provider-create-session/src/main/resources/application.properties
 
@@ -197,13 +197,14 @@ Supported Events:
 ✅ payment_intent.succeeded
 
 ❌ payment_intent.payment_failed
-
-🧪 Testing
+------------------------------------------------------------------------
+🧪 Testing-
 Stripe Test Cards
-Card Number	Scenario	CVV	Expiry
-4242 4242 4242 4242	✅ Success	Any 3 digits	Any future date
-4000 0000 0000 0002	❌ Declined	Any 3 digits	Any future date
-4000 0025 0000 3155	🔐 3D Secure	Any 3 digits	Any future date
+
+     Card Number	 Scenario	CVV	Expiry
+     4242 4242 4242 4242	✅ Success	Any 3 digits	Any future date
+     4000 0000 0000 0002	❌ Declined	Any 3 digits	Any future date
+     4000 0025 0000 3155	🔐 3D Secure	Any 3 digits	Any future date
 
 
 Testing with Postman
@@ -271,7 +272,7 @@ stripe trigger checkout.session.completed
 --------------------------------------------------------------------------------------------------------
 Project Link: https://github.com/deepanshupal8601/Stripe-Payment-Integration-System
 
-🙏 Acknowledgments
+* Acknowledgments
 
 Stripe API Documentation
 
