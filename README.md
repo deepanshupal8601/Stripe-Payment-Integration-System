@@ -89,12 +89,12 @@ stripe-payment-integration-system/
 ---
 
 ## ⚡ Quick Start
-=============================================================================
+
 ### 1️⃣ Clone Repository
 
-git clone https://github.com/your-username/stripe-payment-integration-system.git
+git clone https://github.com/deepanshupal8601/Stripe-Payment-Integration-System.git
 cd stripe-payment-integration-system
-=================================================================================
+......................................................................................
 2️⃣ Configure Stripe API Keys
   Update application.properties in all three services:
 
@@ -109,7 +109,7 @@ cd stripe-payment-integration-system
 📁 stripe-provider-expire-session/src/main/resources/application.properties
     server.port=8085
     stripe.api.secret-key=sk_test_YOUR_SECRET_KEY
-================================================================================
+
 3️⃣ Build Project
     mvn clean install
 4️⃣ Run All Services
@@ -123,7 +123,7 @@ Terminal 3 - Expire Session Service:
         cd stripe-provider-expire-session
         mvn spring-boot:run
 ✅ All services will be running on ports 8083, 8084, and 8085
-===============================================================
+.............................................................................
 
 📡 API Endpoints
 1️⃣ Create Payment Session
@@ -218,7 +218,7 @@ stripe trigger checkout.session.completed
 🔒 Implement rate limiting
 🔒 Store keys in AWS Secrets Manager / Vault
 
-==============================================================
+............................................................................................
 🎯 Microservices Principles Demonstrated
 ✅ Service Independence - Each service runs on separate port (8083, 8084, 8085) independently
 ✅ Single Responsibility - Create Session handles only creation, Get Session only retrieval, Expire Session only cancellation
@@ -231,8 +231,7 @@ stripe trigger checkout.session.completed
 ✅ Externalized Configuration - API keys and ports in application.properties, not hardcoded
 ✅ Service Instance per Container - Each service runs as separate instance, ready for Docker
 ✅ RESTful Communication - Services expose REST endpoints following REST principles
--------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------
+...................................................................................................
 
 👤 Contact
  Deepanshu Pal
