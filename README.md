@@ -28,7 +28,6 @@
 ------------------------------------------------------------------------
 ## 📁 Project Structure
 
-## 📂 Project Structure (High Level)
 
 stripe-payment-integration-system/
 |
