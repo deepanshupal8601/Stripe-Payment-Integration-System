@@ -31,9 +31,13 @@
 ## 📂 Project Structure (High Level)
 
 stripe-payment-integration-system/
+|
 ├── stripe-provider-create-session/
+|
 ├── stripe-provider-get-session/
+|
 ├── stripe-provider-expire-session/
+|
 └── README.md
 
 > Each microservice follows a clean and maintainable **Spring Boot layered architecture**,  
