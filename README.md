@@ -98,21 +98,23 @@ cd stripe-payment-integration-system
 2️⃣ Configure Stripe API Keys
   Update application.properties in all three services:
 
-📁 stripe-provider-create-session/src/main/resources/application.properties
+-📁 stripe-provider-create-session/src/main/resources/application.properties
     server.port=8083
     stripe.api.secret-key=sk_test_YOUR_SECRET_KEY
     stripe.api.publishable-key=pk_test_YOUR_PUBLISHABLE_KEY
     stripe.webhook.secret=whsec_YOUR_WEBHOOK_SECRET
-📁 stripe-provider-get-session/src/main/resources/application.properties
+    
+-📁 stripe-provider-get-session/src/main/resources/application.properties
     server.port=8084
     stripe.api.secret-key=sk_test_YOUR_SECRET_KEY
-📁 stripe-provider-expire-session/src/main/resources/application.properties
+    
+-📁 stripe-provider-expire-session/src/main/resources/application.properties
     server.port=8085
     stripe.api.secret-key=sk_test_YOUR_SECRET_KEY
 
-3️⃣ Build Project
+-3️⃣ Build Project
     mvn clean install
-4️⃣ Run All Services
+-4️⃣ Run All Services
 Terminal 1 - Create Session Service:
          cd stripe-provider-create-session
           mvn spring-boot:run
@@ -217,19 +219,30 @@ stripe trigger checkout.session.completed
 🔒 Enable HTTPS in production
 🔒 Implement rate limiting
 🔒 Store keys in AWS Secrets Manager / Vault
-
 ............................................................................................
+
 🎯 Microservices Principles Demonstrated
+
 ✅ Service Independence - Each service runs on separate port (8083, 8084, 8085) independently
+
 ✅ Single Responsibility - Create Session handles only creation, Get Session only retrieval, Expire Session only cancellation
+
 ✅ Loose Coupling - Services communicate via REST APIs with no direct code dependencies
+
 ✅ Fault Isolation - Failure in one service doesn't crash others (e.g., Expire down, Create/Get still work)
+
 ✅ Independent Scalability - Scale individual services based on traffic load separately
+
 ✅ Independent Deployment - Deploy, update, or rollback services separately without affecting others
+
 ✅ Stateless Services - No local session storage, all state managed by Stripe
+
 ✅ API Gateway Ready - Architecture supports Spring Cloud Gateway integration as single entry point
+
 ✅ Externalized Configuration - API keys and ports in application.properties, not hardcoded
+
 ✅ Service Instance per Container - Each service runs as separate instance, ready for Docker
+
 ✅ RESTful Communication - Services expose REST endpoints following REST principles
 ...................................................................................................
 
