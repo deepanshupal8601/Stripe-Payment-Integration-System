@@ -99,16 +99,19 @@ cd stripe-payment-integration-system
   Update application.properties in all three services:
 
 -📁 stripe-provider-create-session/src/main/resources/application.properties
+
     server.port=8083
     stripe.api.secret-key=sk_test_YOUR_SECRET_KEY
     stripe.api.publishable-key=pk_test_YOUR_PUBLISHABLE_KEY
     stripe.webhook.secret=whsec_YOUR_WEBHOOK_SECRET
     
 -📁 stripe-provider-get-session/src/main/resources/application.properties
+
     server.port=8084
     stripe.api.secret-key=sk_test_YOUR_SECRET_KEY
     
 -📁 stripe-provider-expire-session/src/main/resources/application.properties
+
     server.port=8085
     stripe.api.secret-key=sk_test_YOUR_SECRET_KEY
 
@@ -247,18 +250,27 @@ stripe trigger checkout.session.completed
 ...................................................................................................
 
 👤 Contact
+
  Deepanshu Pal
+ 
 📧 Email: deepanshupal7650@gmail.com
+
 💼 LinkedIn: https://www.linkedin.com/in/deepanshu-pal-b28599205/
+
 🐙 GitHub: https://github.com/deepanshupal8601
+
 
 --------------------------------------------------------------------------------------------------------
 Project Link: github.com/your-username/stripe-payment-integration-system
 
 🙏 Acknowledgments
+
 Stripe API Documentation
+
 Spring Boot Documentation
+
 Stripe Java SDK
+
 Stripe Webhook Guide
 
 
