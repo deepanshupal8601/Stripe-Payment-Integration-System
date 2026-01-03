@@ -94,7 +94,7 @@ stripe-payment-integration-system/
          git clone :
               https://github.com/deepanshupal8601/Stripe-Payment-Integration-System.git
               cd stripe-payment-integration-system
-......................................................................................
+
 2️⃣ Configure Stripe API Keys
               Update application.properties in all three services:
 
@@ -158,7 +158,7 @@ Terminal 3 - Expire Session Service:
          "amount": 5000,
          "currency": "inr"
         }
-................................................................................
+
 
 2️⃣ Get Session Details
                
@@ -174,7 +174,7 @@ Terminal 3 - Expire Session Service:
             "customerEmail": "customer@example.com",
             "paymentIntentId": "pi_3abc123xyz"
        }
-........................................................................
+
 3️⃣ Expire Payment Session
               
               Request:
@@ -230,7 +230,6 @@ stripe trigger checkout.session.completed
 🔒 Validate webhook signatures
 🔒 Enable HTTPS in production
 🔒 Implement rate limiting
-🔒 Store keys in AWS Secrets Manager / Vault
 ............................................................................................
 
 🎯 Microservices Principles Demonstrated
