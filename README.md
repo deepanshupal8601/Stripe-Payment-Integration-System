@@ -26,183 +26,24 @@
 | **Maven** | Build and dependency management |
 
 ------------------------------------------------------------------------
+## 📁 Project Structure
+
+## 📂 Project Structure (High Level)
 
 stripe-payment-integration-system/
-│
 ├── stripe-provider-create-session/
-│   ├── src/main/java/com/hulkhire/payments/
-│   │   ├── StripeProviderCreateSessionApplication.java
-│   │   │   └── Main Spring Boot application
-│   │   │
-│   │   ├── config/
-│   │   │   └── AppConfig.java
-│   │   │       └── Application-level configuration
-│   │   │
-│   │   ├── constant/
-│   │   │   ├── Constant.java
-│   │   │   └── ErrorCodeEnum.java
-│   │   │       └── Application constants and error codes
-│   │   │
-│   │   ├── controller/
-│   │   │   ├── PaymentController.java
-│   │   │   │   └── REST APIs for creating payment sessions
-│   │   │   └── AdditionController.java
-│   │   │
-│   │   ├── service/
-│   │   │   ├── interfaces/
-│   │   │   │   └── PaymentService.java
-│   │   │   ├── impl/
-│   │   │   │   └── PaymentServiceImpl.java
-│   │   │   └── helper/
-│   │   │       └── CreatePaymentHelper.java
-│   │   │           └── Stripe session creation logic
-│   │   │
-│   │   ├── pojo/
-│   │   │   ├── CreatePaymentRequest.java
-│   │   │   ├── PaymentResponse.java
-│   │   │   ├── LineItem.java
-│   │   │   └── ErrorResponse.java
-│   │   │
-│   │   ├── exception/
-│   │   │   ├── GlobalExceptionHandler.java
-│   │   │   └── StripeProviderException.java
-│   │   │
-│   │   ├── http/
-│   │   │   ├── HttpRequest.java
-│   │   │   └── HttpServiceEngine.java
-│   │   │
-│   │   └── util/
-│   │       └── JsonUtil.java
-│   │
-│   ├── src/main/resources/
-│   │   └── application.properties
-│   │
-│   └── pom.xml
-│
 ├── stripe-provider-get-session/
-│   ├── src/main/java/com/hulkhiretech/payments/
-│   │   ├── StripeProviderServiceApplication.java
-│   │   │
-│   │   ├── config/
-│   │   │   └── AppConfig.java
-│   │   │
-│   │   ├── constant/
-│   │   │   ├── Constant.java
-│   │   │   └── ErrorCodeEnum.java
-│   │   │
-│   │   ├── controller/
-│   │   │   ├── PaymentController.java
-│   │   │   │   └── APIs to fetch payment session details
-│   │   │   └── AdditionController.java
-│   │   │
-│   │   ├── service/
-│   │   │   ├── interfaces/
-│   │   │   │   └── PaymentService.java
-│   │   │   ├── impl/
-│   │   │   │   └── PaymentServiceImpl.java
-│   │   │   └── helper/
-│   │   │       ├── CreatePaymentHelper.java
-│   │   │       └── GetPaymentHelper.java
-│   │   │
-│   │   ├── pojo/
-│   │   │   ├── CreatePaymentRequest.java
-│   │   │   ├── PaymentResponse.java
-│   │   │   ├── LineItem.java
-│   │   │   └── ErrorResponse.java
-│   │   │
-│   │   ├── stripe/
-│   │   │   └── StripeResponse.java
-│   │   │
-│   │   ├── exception/
-│   │   │   ├── GlobalExceptionHandler.java
-│   │   │   └── StripeProviderException.java
-│   │   │
-│   │   ├── http/
-│   │   │   ├── HttpRequest.java
-│   │   │   └── HttpServiceEngine.java
-│   │   │
-│   │   └── util/
-│   │       ├── JsonUtil.java
-│   │       └── StripeResponseUtil.java
-│   │
-│   ├── src/main/resources/
-│   │   ├── application.properties
-│   │   ├── application-dev.properties
-│   │   ├── application-local.properties
-│   │   ├── application-qa.properties
-│   │   ├── application-uat.properties
-│   │   └── application-prod.properties
-│   │
-│   └── pom.xml
-│
 ├── stripe-provider-expire-session/
-│   ├── src/main/java/com/hulkhiretech/payments/
-│   │   ├── StripeProviderServiceApplication.java
-│   │   │
-│   │   ├── config/
-│   │   │   └── AppConfig.java
-│   │   │
-│   │   ├── constant/
-│   │   │   ├── Constant.java
-│   │   │   ├── ErrorCodeEnum.java
-│   │   │   └── NotificationType.java
-│   │   │
-│   │   ├── controller/
-│   │   │   ├── PaymentController.java
-│   │   │   │   └── APIs to expire payment sessions
-│   │   │   ├── StripeWebhookController.java
-│   │   │   │   └── Stripe webhook handler
-│   │   │   └── AdditionController.java
-│   │   │
-│   │   ├── service/
-│   │   │   ├── ProcessStripeEventAsync.java
-│   │   │   ├── interfaces/
-│   │   │   │   ├── PaymentService.java
-│   │   │   │   └── StripeWebhookService.java
-│   │   │   ├── impl/
-│   │   │   │   ├── PaymentServiceImpl.java
-│   │   │   │   └── StripeWebhookServiceImpl.java
-│   │   │   └── helper/
-│   │   │       ├── CreatePaymentHelper.java
-│   │   │       ├── GetPaymentHelper.java
-│   │   │       ├── ExpirePaymentHelper.java
-│   │   │       └── StripeWebhookHelper.java
-│   │   │
-│   │   ├── pojo/
-│   │   │   ├── CreatePaymentRequest.java
-│   │   │   ├── PaymentResponse.java
-│   │   │   ├── LineItem.java
-│   │   │   └── ErrorResponse.java
-│   │   │
-│   │   ├── processingservice/
-│   │   │   └── NotificationRequest.java
-│   │   │
-│   │   ├── stripe/
-│   │   │   └── StripeResponse.java
-│   │   │
-│   │   ├── exception/
-│   │   │   ├── GlobalExceptionHandler.java
-│   │   │   └── StripeProviderException.java
-│   │   │
-│   │   ├── http/
-│   │   │   ├── HttpRequest.java
-│   │   │   └── HttpServiceEngine.java
-│   │   │
-│   │   └── util/
-│   │       ├── JsonUtil.java
-│   │       └── StripeResponseUtil.java
-│   │
-│   ├── src/main/resources/
-│   │   ├── application.properties
-│   │   ├── application-dev.properties
-│   │   ├── application-local.properties
-│   │   ├── application-qa.properties
-│   │   ├── application-uat.properties
-│   │   └── application-prod.properties
-│   │
-│   └── pom.xml
-│
 └── README.md
+
+> Each microservice follows a clean and maintainable **Spring Boot layered architecture**,  
+> ensuring proper separation of concerns:
+> - **Controller Layer** – Exposes REST APIs and handles HTTP requests/responses  
+> - **Service Layer** – Contains core business logic and payment workflows  
+> - **Helper Layer** – Encapsulates Stripe-specific processing and reusable logic  
+> - **Exception Layer** – Centralized error handling with custom exceptions  
+> - **Config Layer** – Application and Stripe configuration management  
+> - **Util Layer** – Common utilities and JSON processing helpers
 
 ----------------------------------------------------------------------------------------------------||
 
