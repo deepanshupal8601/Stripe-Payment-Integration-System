@@ -116,48 +116,55 @@ cd stripe-payment-integration-system
     stripe.api.secret-key=sk_test_YOUR_SECRET_KEY
 
 -3️⃣ Build Project
+
     mvn clean install
 -4️⃣ Run All Services
+
 Terminal 1 - Create Session Service:
+
          cd stripe-provider-create-session
           mvn spring-boot:run
 Terminal 2 - Get Session Service:
+
         cd stripe-provider-get-session
          mvn spring-boot:run
 Terminal 3 - Expire Session Service:
+
         cd stripe-provider-expire-session
         mvn spring-boot:run
 ✅ All services will be running on ports 8083, 8084, and 8085
 .............................................................................
 
 📡 API Endpoints
+
 1️⃣ Create Payment Session
-Request:  POST http://localhost:8083/payments
+       
+       Request:  POST http://localhost:8083/payments
+       Content-Type: application/json
+          {
+          "amount": 5000,
+          "currency": "inr",
+          "successUrl": "http://localhost:8083/payments/success",
+           "cancelUrl": "http://localhost:8083/payments/cancel"
+        }
+        
+     Response:
 
-Content-Type: application/json
-
-{
-  "amount": 5000,
-  "currency": "inr",
-  "successUrl": "http://localhost:8083/payments/success",
-  "cancelUrl": "http://localhost:8083/payments/cancel"
-}
-Response:
-
-json
-{
-  "id": "cs_test_a1b2c3d4e5f6",
-  "checkoutUrl": "https://checkout.stripe.com/c/pay/cs_test_a1b2c3d4e5f6",
-  "status": "open",
-  "amount": 5000,
-  "currency": "inr"
-}
+        json
+          {
+          "id": "cs_test_a1b2c3d4e5f6",
+         "checkoutUrl": "https://checkout.stripe.com/c/pay/cs_test_a1b2c3d4e5f6",
+         "status": "open",
+         "amount": 5000,
+         "currency": "inr"
+        }
 ................................................................................
-2️⃣ Get Session Details
-Request:
 
-GET http://localhost:8084/payments/cs_test_a1b2c3d4e5f6
-Response:
+2️⃣ Get Session Details
+               
+               Request:
+                    GET http://localhost:8084/payments/cs_test_a1b2c3d4e5f6
+          Response:
         json
           {
             "id": "cs_test_a1b2c3d4e5f6",
@@ -169,10 +176,11 @@ Response:
        }
 ........................................................................
 3️⃣ Expire Payment Session
-Request:
+              
+              Request:
 
-POST http://localhost:8085/payments/cs_test_a1b2c3d4e5f6/expire
-Response:
+            POST http://localhost:8085/payments/cs_test_a1b2c3d4e5f6/expire
+     Response:
          json
           {
            "id": "cs_test_a1b2c3d4e5f6",
@@ -180,7 +188,7 @@ Response:
           "message": "Session expired successfully"
          }
 4️⃣ Webhook Handler
-Endpoint:
+                Endpoint:
 POST http://localhost:8083/api/webhook/stripe
 Supported Events:
 
@@ -261,7 +269,7 @@ stripe trigger checkout.session.completed
 
 
 --------------------------------------------------------------------------------------------------------
-Project Link: github.com/your-username/stripe-payment-integration-system
+Project Link: https://github.com/deepanshupal8601/Stripe-Payment-Integration-System
 
 🙏 Acknowledgments
 
