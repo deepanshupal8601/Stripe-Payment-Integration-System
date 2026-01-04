@@ -2,7 +2,6 @@ package com.hulkhire.payments.exception;
 
 
 import org.springframework.http.HttpStatus;
-
 import lombok.Getter;
 import lombok.ToString;
 
