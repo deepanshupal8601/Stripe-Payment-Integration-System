@@ -201,9 +201,10 @@ Supported Events:
 🧪 Testing-
 Stripe Test Cards
 
-     Card Number	 Scenario	CVV	Expiry
-     4242 4242 4242 4242	✅ Success	Any 3 digits	Any future date
-     4000 0000 0000 0002	❌ Declined	Any 3 digits	Any future date
+     Card Number	           Scenario               	CVV	Expiry
+     
+     4242 4242 4242 4242	✅ Success	Any 3 digits   	Any future date
+     4000 0000 0000 0002	❌ Declined	Any 3 digits	  Any future date
      4000 0025 0000 3155	🔐 3D Secure	Any 3 digits	Any future date
 
 
